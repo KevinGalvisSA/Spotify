@@ -2,6 +2,7 @@ import { LitElement, css, html } from "lit";
 import { newMusic } from "./newMusic";
 import { titlesTopChart } from "./titleTopChart";
 import { div8 } from "./div8";
+import { div7 } from "./div7";
 
 export class gridSpotify extends LitElement {
     constructor() {
@@ -24,7 +25,7 @@ export class gridSpotify extends LitElement {
             grid-area: 3 / 2 / 8 / 5;
             background-color: blue;
             }
-        .div3 {
+        .div7 {
             grid-area: 8 / 2 / 11 / 5;
             background-color: yellow;
         }
@@ -54,7 +55,7 @@ export class gridSpotify extends LitElement {
             <main class="main">
                 <top-chart class="top-chart"></top-chart>
                 <new-music class="new-music"></new-music>
-                <my-div3 class="div3"></my-div3>
+                <my-div7 class="div7"></my-div7>
                 <my-div4 class="div4"></my-div4>
                 <my-div5 class="div5"></my-div5>
                 <my-div6 class="div6"></my-div6>
