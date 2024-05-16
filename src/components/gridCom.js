@@ -1,6 +1,7 @@
 import { LitElement, css, html } from "lit";
 import { newMusic } from "./newMusic";
 import { titlesTopChart } from "./titleTopChart";
+import { div8 } from "./div8";
 
 export class gridSpotify extends LitElement {
     constructor() {
