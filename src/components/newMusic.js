@@ -37,6 +37,11 @@ export class newMusic extends LitElement {
         .container::-webkit-scrollbar {
             display:none
         }
+
+        .tittle_top-chart{
+            font-size:1.3em;
+        }
+
         .boxMusic {
             display: flex;
             flex-direction: column;
@@ -82,6 +87,7 @@ export class newMusic extends LitElement {
     render() {
         console.log(this.dataMusic)
         return html`
+        <h1 class="tittle_top-chart">Top-Chart</h1>
             <div class=${this.container}>
                 ${this.dataMusic.map(musicItem => html`
                 <div class="boxMusic">
