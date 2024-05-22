@@ -26,7 +26,7 @@ export class myTrack extends LitElement{
       const options = {
         method: 'GET',
         headers: {
-          'X-RapidAPI-Key': '29392637f6msh22f35e67f4b3080p17fbe7jsn0806c5a433fb',
+          'X-RapidAPI-Key': '4265340127msh21794cf1e8bce03p1105d1jsnec76a353b819',
           'X-RapidAPI-Host': 'spotify23.p.rapidapi.com'
         }
       };
@@ -345,68 +345,157 @@ export class MyMiddleSection extends LitElement {
     super();
   }
 
+  static styles = css`
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .body{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  .header{
+      display: flex;
+      height: 5vh;
+      justify-content: center;
+      align-items: center;
+  }
+  .UserOptions{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+  }
+  .songName{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  .mediaOptions{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      padding-left: 3vh;
+      padding-right: 3vh;
+      height: 25vh;
+      justify-content: space-around;
+  }
+  
+  .musicTime{
+      display: flex;
+      justify-content: space-between;
+
+  }
+  .progressMusic{
+      display: flex;
+      justify-content: center;
+  }
+  .progressMusic progress{
+      width: 100%;
+      height: 0.5vh;
+      background-color: #ddd;
+  }
+  progress::-webkit-progress-value{
+      background-color: #27AE60;
+  }
+  progress::-webkit-progress-bar {
+
+      background-color: #ececec;
+  }
+  .mediaControl{
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+  }
+  .volumeControl{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .volumeControl progress{
+      width: 50%;
+      height: 0.3vh;
+      background-color: #ddd;
+  }
+  .deviceOutput{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      justify-content: center;
+  }
+  .deviceOutput div{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      background: #6fcf9752;
+      width: 18vh;
+      border-radius: 1vh;
+  }
+  .SongImage{
+    display: flex;
+    justify-content: center
+  }
+  `;
   render() {
     return html`
-      <div class = middleSection__container>
-        <div class = "middleSection__title"></div>
-        <div class = "middleSection__image"></div>
-        <div class = "middleSection__songTitle"></div>
-        <div class = "middleSection__barDuration"></div>
-        <div class = "middleSection__bottons"></div>
-        <div class = "middleSection__barVolume"></div>
-        <div class = "middleSection__deviceReference"></div>
+    <body class="body">
+    <header class="header">
+      <div>
+        <h3>Now Playing</h3>
       </div>
-    `
-  }
-
-  static get styles() {
-    return css`
-      .middleSection__container{
-        display:grid;
-        grid-template-rows: .2fr, 2fr, .35fr, .15fr, .45fr, .12fr, .2fr;
-        gap: .5em;
-        height: 96vh;
-        padding: 1em 0;
-      }
-      .middleSection__title{
-        grid-rows: 1/2;
-        background: white;
-        max-height: 40px;
-      }
-      .middleSection__image{
-        grid-rows: 2/3;
-        background: white;
-        min-height: 300px;
-      }
-      .middleSection__songTitle{
-        grid-rows: 3/4;
-        background: white;
-        
-      }
-      .middleSection__barDuration{
-        grid-rows: 4/5;
-        background: white;
-        max-height: 25px;
-        display: flex;
-        align-items:center;
-        justify-content: center;
-      }
-      .middleSection__bottons{
-        grid-rows: 5/6;
-        background: white;
-        min-height: 30px;
-      }
-      .middleSection__barVolume{
-        grid-rows: 6/7;
-        background: white;
-        max-height: 20px;
-      }
-      .middleSection__deviceReference{
-        grid-rows: 7/8;
-        background: white;
-        max-height: 40px;
-      }
-    `
+    </header>
+    <div class="SongInfo">
+      <div class="SongImage">
+        <img src="/src/assets/image_20.png">
+      </div>
+      <div class="UserOptions">
+        <div>
+          <box-icon name='plus' color='#9bd8b5'></box-icon>
+        </div>
+        <div class="songName">
+          <h3>
+            Money Machine
+          </h3>
+          <h6>
+            1000 Gecks
+          </h6>
+        </div>
+        <div>
+          <box-icon name='heart' color='#9bd8b5' ></box-icon>
+        </div>
+      </div>
+    </div>
+    <div class="mediaOptions">
+      <div class="musicTimeline">
+        <div class="musicTime">
+          <p>2:14</p>
+          <p>-1:15</p>
+        </div>
+        <div class="progressMusic">
+          <progress class="progress" value="214" max="329"></progress>
+        </div>
+        </div>
+      <div class="mediaControl">
+        <box-icon name='shuffle' flip='vertical' color='#828282' ></box-icon>
+        <box-icon name='rewind' flip='vertical' color='#27ae60' size='lg' ></box-icon>
+        <box-icon name='play-circle' color='#27ae60' size='lg'></box-icon>
+        <box-icon name='rewind' rotate='180' color='#27ae60' size='lg'></box-icon>
+        <box-icon name='repeat' color='#828282'></box-icon>
+      </div>
+      <div class="volumeControl">
+        <box-icon name='volume-low' color='#828282'></box-icon>
+        <progress class="progress" value="214" max="329"></progress>
+        <box-icon name='volume-full' color='#828282' ></box-icon>
+      </div>
+      <div class="deviceOutput">
+        <div><box-icon name='headphone' color='#828282' ></box-icon>
+          <p>Airpods Pro (Dave)</p>
+        </div>
+      </div>
+    </div>
+  </body>
+    `;
   }
 }
 customElements.define('my-middle-section', MyMiddleSection); 
